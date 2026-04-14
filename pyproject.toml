@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-bsc"
+version = "0.1.0"
+description = "MCP server for automated personal performance sheet generation"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp[cli]>=1.0.0",
+    "openpyxl>=3.1.0",
+    "python-dotenv>=1.0.0",
+    "httpx>=0.27.0",
+]
+
+[project.scripts]
+mcp-bsc = "mcp_bsc.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
